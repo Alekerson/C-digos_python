@@ -20,6 +20,7 @@ print(grupo, "\n")
     print(f"{grupo[contador]['Nome']}: {grupo[contador]['Idade']}\n")
 '''
 #OUTRA FORMA DE ACESSAR O DICIONÁRIO
-for linha in grupo:
-    for elementos in linha.values():
-        print(f" {elementos}")
+for linha in grupo:#aqui comanda a linha 
+    for elementos in linha.values():#aqui comando a coluna(obrigatoriamente nessa ordem, primeiro linha e depois coluna)
+        print(f" {elementos}", end="")
+    print()
