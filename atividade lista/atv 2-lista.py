@@ -1,5 +1,5 @@
 vet = []
-cont = 8
+cont = 0
 posicao = 0
 while cont <= 20:
     vet.append(cont)
