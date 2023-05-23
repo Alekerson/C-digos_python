@@ -1,4 +1,5 @@
 from funcionario import Funcionario
+
 insiraNome = input("Digite seu nome: ")
 insiraCargo = input("Digite seu cargo: ")
 
