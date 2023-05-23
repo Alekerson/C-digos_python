@@ -13,6 +13,6 @@ print(f"Seu nome é {f1.getNome()}")#Aqui está exibindo o nome
 
 print(f"Seu cargo é {f1.cargo}")
 
-f1.cargo = "Gerente"
+f1.cargo = input("Digite seu cargo: ")
 
 print(f"Seu cargo é {f1.cargo}")
