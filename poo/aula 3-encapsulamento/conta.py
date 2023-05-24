@@ -21,3 +21,14 @@ class Conta:
             print("Valor menor que zero, informe outro valor")
         else:
             self.__limite = valor
+    #VAMOS MODIFICAR O ATRBUTO SALDO COM @PROPERTY E @SETTER
+    @property
+    def saldo(self):
+        print(f"Olá, seu saldo é {self.__saldo} \n")
+    
+    @saldo.setter
+    def saldo(self, valor):
+        if valor <= 0:
+            print("Você não pode inserir um valor negativo ou zero \n")
+        else:
+            self.__saldo = valor

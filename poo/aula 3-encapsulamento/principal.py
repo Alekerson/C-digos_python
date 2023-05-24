@@ -11,8 +11,13 @@ minhaConta.titular = input("Digite seu nome: ")
 minhaConta.saldo = int(input("Digite seu saldo:"))
 minhaConta.limite = int(input("Informe seu limite: "))
 """
-print(f"Seu limite é R${minhaConta.getLimite()}")
+# print(f"Seu limite é R${minhaConta.getLimite()}")
 
-minhaConta.setLimite(-600)
+# minhaConta.setLimite(-600)
 
-print(f"Seu limite é R${minhaConta.getLimite()}")
+# print(f"Seu limite é R${minhaConta.getLimite()}")
+
+minhaConta.saldo
+
+minhaConta.saldo = 800
+minhaConta.saldo
