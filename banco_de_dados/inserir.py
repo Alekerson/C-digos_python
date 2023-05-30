@@ -25,6 +25,6 @@ consulta.execute(comando, campos)#o execute() ele substitui os dados do comando 
 
 conexao.commit()#o commit vai gravar os dados no banco
 
-print(consulta.rowcount, "linha(s) inserida com sucesso! \n")#rowcount conta a quantidade de linhas que o comando executou 
+print(consulta.rowcount, "linha(s) inserida com sucesso! \n")#rowcount conta a quantidade de linhas que o comando executou  
 
 conexao.close()
