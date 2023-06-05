@@ -7,71 +7,22 @@ class Pratos:
     
     def inseir(self, nome, preco, descricao):
         conexao = self.conexao()
-
         comando = "insert into pratos(nome, preco, descricao) values(%s, %s, %s)"
-
         valores = (nome, preco, descricao)
-
         consulta = conexao.cursor()
-
         consulta.execute(comando, valores)
-
         conexao.commit()
-
         conexao.close()
-
         print(f"{consulta.rowcount} linha foi inserida!")
         system("cls")
     
-    def atualizarNome(self, id, nome):
-        conexao = self.conexao()
-        consulta = conexao.cursor()
-
-        comando = "update pratos set nome = %s where id = %s"
-
-        consulta.execute(comando, (nome, id))
-        conexao.commit()
-        conexao.close()
-        print(f"{consulta.rowcount} linha atualizada com sucesso!")
-        system("cls")
-
-    def atualizarPreco(self, id, Preco):
-        conexao = self.conexao()
-        consulta = conexao.cursor()
-
-        comando = "update pratos set preco = %s where id = %s"
-
-        consulta.execute(comando, (Preco, id))
-        conexao.commit()
-        conexao.close()
-        print(f"{consulta.rowcount} linha atualizada com sucesso!")
-        system("cls")
-
-    def atualizarPreco(self, id, descricao):
-        conexao = self.conexao()
-        consulta = conexao.cursor()
-
-        comando = "update pratos set descricao = %s where id = %s"
-
-        consulta.execute(comando, (descricao, id))
-        conexao.commit()
-        conexao.close()
-        print(f"{consulta.rowcount} linha atualizada com sucesso! \n")
-        system("cls")
-
     def consulta(self):
         Conexao = self.conexao()
-        
         comando = "select * from pratos"
-
         consulta = Conexao.cursor()
-
         consulta.execute(comando)
-
         resultado = consulta.fetchall()
-
         Conexao.close()
-
         for itens in resultado:
             print(f"id: {itens[0]}, nome: {itens[1]}, preço: {itens[2]}, descrição: {itens[3]}")
 
@@ -83,4 +34,14 @@ class Pratos:
         consulta.execute(comando, codigo)
         conexao.commit()
         consulta.close()
+        system("cls")
+
+    def atualizarGeral(self, campo, valor, id):
+        conexao = self.conexao()
+        consulta = conexao.cursor()
+        comando = f"update pratos set {campo} = %s where id = %s"
+        consulta.execute(comando, (valor, id))
+        conexao.commit()
+        conexao.close()
+        print(f"{consulta.rowcount} linha atualizada com sucesso! \n")
         system("cls")

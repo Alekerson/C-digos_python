@@ -18,6 +18,9 @@
 --
 -- Table structure for table `pratos`
 --
+create Database restaurante_bd;
+
+use restaurante_bd;
 
 DROP TABLE IF EXISTS `pratos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

@@ -23,28 +23,28 @@ O que deseja: '''))
         p1.inseir(nome, preco, descricao)
 
     elif escolha == 2:
+        validacao = ["nome", "preco", "descricao" ]
+        print("="*10,"Cardápio","="*10)
+        p1.consulta()
+        print("="*40)
         while True:
-            atualizar = int(input('''1 - nome
-2 - Preço
-3 - Descrição
-O que deseja atualiza: '''))                                                                             
-            if atualizar >=1 and atualizar <=3:
+            campo = input("Qual campo deseja atualiza: ")
+            if campo in validacao: #in ele é um operador que comparar um item dentro de uma lista
                 break
-        if atualizar == 1:
-            id = int(input("Digite o id do prato que quer atualizar: "))
-            nome = input("Digite o novo nome do prato: ")
-            p1.atualizarNome(id, nome)
-        elif atualizar == 2:
-            id = int(input("Digite o id do prato que quer atualizar: "))
-            preco = float(input("Digite o novo preço do prato: "))
-            p1.atualizarPreco(id, preco)
-        elif atualizar == 3:
-            id = int(input("Digite o id do prato que quer atualizar: "))
-            descricao = input("Digite o novo preço do prato: ")
-            p1.atualizarPreco(id, descricao)
+        id = int(input("Digite o id do prato que quer atualizar: "))
+        if campo == "preco":
+            valor = float(input("Digite o novo preço do prato: "))
+        elif campo == "nome":
+            valor = input("Digite o novo nome do prato: ")
+        elif campo == "descricao":
+            valor = input("Digite a descrição do prato: ")
+        p1.atualizarGeral(campo, valor, id)
+
 
     elif escolha == 3:
+        print("="*10,"Cardápio","="*10)
         p1.consulta()
+        print("="*40)
 
     elif escolha == 4:
         p1.deletar()
